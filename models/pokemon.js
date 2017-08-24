@@ -6,7 +6,7 @@ mongoose.connect("mongodb://localhost:27017/pokemonDirectory");
 
 
 const pokemonSchema = new Schema ({
-    name: {type: String, required: true},
+    name: {type: String, required: true, unique: true},
     gender: {type: String, required: true},
     type: {type: [String], required: true},
     candy: {type: String, required: true},
@@ -17,7 +17,6 @@ const pokemonSchema = new Schema ({
     },
     hp: {type: Number},
     cp: {type: Number},
-
 });
 
 

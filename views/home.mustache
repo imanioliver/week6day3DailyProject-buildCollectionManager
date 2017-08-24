@@ -1,0 +1,63 @@
+<h1>Current Pokémon Database</h1>
+
+
+<h3>Create a Pokemon here</h3>
+
+<form class="" action="/" method="post">
+    <input type="text" name="name" value="" placeholder="Pokémon Name">
+    <input type="text" name="gender" value="" placeholder ="Gender">
+    Pokémon Type(s)
+    <fieldset>
+        <legend>Select Pokémon Types</legend>
+
+        <label for="electric">
+        <input name="type" type="checkbox" id="electric" value="Elec"/>Electric</label>
+        <label for="water">
+        <input name="type" type="checkbox" id="water" value="water"/>Water</label>
+        <label for="rock">
+        <input name="type" type="checkbox" id="rock" value="rok"/>Rock</label>
+        <label for="fire">
+        <input name="type" type="checkbox" id="fire" value="fir"/>Fire</label>
+        <label for="bug">
+        <input name="type" type="checkbox" id="bug" value="bee"/>Bug</label>
+        <label for="poison">
+        <input name="type" type="checkbox" id="poison" value="sludge"/>Poison</label>
+        <label for="fairy">
+        <input name="type" type="checkbox" id="fairy" value="clefairy"/>Fairy</label>
+        <label for="grass">
+        <input name="type" type="checkbox" id="grass" value="ivy"/>Grass</label>
+        <label for="flying">
+        <input name="type" type="checkbox" id="flying" value="bird"/>Flying</label>
+    </fieldset>
+    </div>
+    <input type="text" name="candy" value="" placeholder="Candy">
+    <input type="" name="attacks" value="" placeholder="Attacks">
+    <input type="" name="attacks" value="" placeholder="Attacks">
+    <input type="number" name="hp" value="" placeholder="Health Points">
+    <input type="number" name="cp" value="" placeholder="Combat Power">
+    <input type="text" name="city" value="" placeholder="City">
+    <input type="text" name="state" value="" placeholder="State">
+    <input type="text" name="month" value="" placeholder="Month">
+    <input type="number" name="day" value="" placeholder="Day">
+    <input type="number" name="year" value="" placeholder="Year">
+    <input type="submit" name="button" placeholder="Create">
+</form>
+
+{{#pokemonCatchInfo}}
+<hr>
+<ul>
+    <li>{{name}}</li>
+    <li>{{gender}}</li>
+</ul>
+<form class="" action="/delete" method="post">
+    <button type="submit" name="name" value="{{name}}">Delete</button>
+</form>
+<form class="" action="/edit" method="post">
+    <button type="button" name="button">Edit</button>
+</form>
+
+<!-- on delete button, bring up an alert on click -->
+<!-- maybe do an if statement on the edit button  -->
+
+
+{{/pokemonCatchInfo}}
