@@ -1,12 +1,14 @@
+{{#pokemonCatchInfo}}
+
 <h1>Edit Your Pokemon Here</h1>
 
 
 
 
 <form class="" action="/edit/{{name}}" method="post">
-    Current Name: {{name}} Change to : <input type="text" name="name" value="" placeholder="Pokémon Name">
-    Current Gender: {{gender}}. Change to : <input type="text" name="gender" value="" placeholder ="Gender">
-    Current Pokémon Type(s): {{#type}}{{.}}{{/type}}. Change to :
+    Current Name: {{name}} Change to : <input type="text" name="name" value="" placeholder="Pokémon Name"> <br>
+    Current Gender: {{gender}}. Change to : <input type="text" name="gender" value="" placeholder ="Gender"> <br>
+    Current Pokémon Type(s): {{#type}}{{.}}{{/type}}. <br> Change to :
     <fieldset  class="pokemonTypes">
         <legend>Select Pokémon Type(s)</legend>
         <label for="electric">
@@ -32,26 +34,27 @@
         <label for="ice">
         <input name="type" type="checkbox" id="ice" value="ice"/>Ice</label>
     </fieldset>
-    </div>
+</div> <br>
     Current Candy <input type="text" name="candy" value="" placeholder="Candy">
     <fieldset class="attacks">
         <legend>Attacks</legend>
         <input type="" name="attacks" value="" placeholder="Attack 1">
         <input type="" name="attacks" value="" placeholder="Attack 2">
-    </fieldset>
+    </fieldset> <br>
 
-    Current HP: <input type="number" name="hp" value="" placeholder="Health Points">
-    Current CP: <input type="number" name="cp" value="" placeholder="Combat Power">
-    Catch Info:
-    Current Catch City:<input type="text" name="city" value="" placeholder="City">
-    Current Catch State: <input type="text" name="state" value="" placeholder="State">
+    Current HP: <input type="number" name="hp" value="{{hp}}" placeholder="Health Points"> <br>
+    Current CP: <input type="number" name="cp" value="{{cp}}" placeholder="Combat Power"> <br>
+    <hr>Catch Info:
+     Current Catch City:<input type="text" name="city" value="{{city}}" placeholder="City">
+    Current Catch State: <input type="text" name="state" value="{{state}}" placeholder="State"> <hr> <br>
+
     <input type="submit" name="button" placeholder="Create">
 </form>
 
 
 
 
-
+{{/pokemonCatchInfo}}
 
 
 
