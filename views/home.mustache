@@ -1,3 +1,4 @@
+
 <h1>Current Pokémon Database</h1>
 
 
@@ -37,24 +38,29 @@
     <input type="number" name="cp" value="" placeholder="Combat Power">
     <input type="text" name="city" value="" placeholder="City">
     <input type="text" name="state" value="" placeholder="State">
-    <input type="text" name="month" value="" placeholder="Month">
-    <input type="number" name="day" value="" placeholder="Day">
-    <input type="number" name="year" value="" placeholder="Year">
     <input type="submit" name="button" placeholder="Create">
 </form>
 
 {{#pokemonCatchInfo}}
 <hr>
-<ul>
-    <li>{{name}}</li>
-    <li>{{gender}}</li>
-</ul>
-<form class="" action="/delete" method="post">
-    <button type="submit" name="name" value="{{name}}">Delete</button>
-</form>
-<form class="" action="/edit" method="post">
-    <button type="button" name="button">Edit</button>
-</form>
+<div class="pokemonCard">
+
+
+
+         <strong> Name:</strong> {{name}} <br>
+         <strong> Gender:</strong> {{gender}} <br>
+         <strong> Attacks: </strong>{{#attacks}}{{.}} | {{/attacks}} <br>
+         <strong> Candy Type:</strong> {{candy}} <br>
+         <strong> CP: </strong>{{cp}} <br>
+
+    <form class="" action="/delete" method="post">
+        <button type="submit" name="name" value="{{name}}">Delete</button>
+    </form>
+    <!-- <form class="" action="/edit/{{name}}" method="post">
+        <button type="button" name="button" value="{{name}}">Edit</button>
+    </form> -->
+    <button type="button" name="button"><a href="/edit/{{name}}">Edit</a></button>
+</div>
 
 <!-- on delete button, bring up an alert on click -->
 <!-- maybe do an if statement on the edit button  -->

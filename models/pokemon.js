@@ -8,6 +8,7 @@ mongoose.connect("mongodb://localhost:27017/pokemonDirectory");
 const pokemonSchema = new Schema ({
     name: {type: String, required: true, unique: true},
     gender: {type: String, required: true},
+    // imageFile: URL, 
     type: {type: [String], required: true},
     candy: {type: String, required: true},
     attacks: [String],

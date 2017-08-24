@@ -39,8 +39,6 @@ router.post('/', function (req, res){
     res.redirect('/');
 })
 
-
-
 router.post('/delete', function(req, res){
     let name = req.body.name;
     console.log(name);
@@ -53,15 +51,61 @@ router.post('/delete', function(req, res){
       .catch(function(err) {
         // console.log(err);
       });
-
-
-
 });
+
+router.get('/edit/:name', function(req, res){
+    res.render('edit');
+});
+
+router.post('/edit/:name', function(req, res){
+
+
+    // Pokemon.updateOne({
+    //     name: req.body.name,
+    //     gender: req.body.gender,
+    //     type: req.body.type,
+    //     candy: req.body.candy,
+    //     attacks: req.body.attacks,
+    //     catchInfo: {
+    //         city: req.body.city,
+    //         state: req.body.state,
+    //         },
+    //     hp: req.body.hp,
+    //     cp: req.body.cp,
+    //     }
+    // , {$push. {
+    //     name: req.body.name,
+    //     gender: req.body.gender,
+    //     type: req.body.type,
+    //     candy: req.body.candy,
+    //     attacks: req.body.attacks,
+    //     catchInfo: {
+    //         city: req.body.city,
+    //         state: req.body.state,
+    //         },
+    //     hp: req.body.hp,
+    //     cp: req.body.cp,}
+    //     })
+
+
+    //
+    //
+    // .then(function(data){
+    //
+    // })
+    // .catch(function(err){
+    //
+    // });
+
+
+    res.redirect('/');
+});
+
 
 router.post('/:id', function (req, res){
     let id = req.params.id;
     // console.log(id, "the id");
     res.redirect('/');
-})
+});
 
 module.exports = router;

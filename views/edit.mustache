@@ -1,1 +1,92 @@
-<h1>this is the EDIT page</h1>
+<h1>Edit Your Pokemon Here</h1>
+
+
+
+
+<form class="" action="/edit/{{name}}" method="post">
+    Current Name: {{name}} Change to : <input type="text" name="name" value="" placeholder="Pokémon Name">
+    Current Gender: {{gender}}. Change to : <input type="text" name="gender" value="" placeholder ="Gender">
+    Current Pokémon Type(s): {{#type}}{{.}}{{/type}}. Change to :
+    <fieldset  class="pokemonTypes">
+        <legend>Select Pokémon Type(s)</legend>
+        <label for="electric">
+        <input name="type" type="checkbox" id="electric" value="electric"/>Electric</label>
+        <label for="water">
+        <input name="type" type="checkbox" id="water" value="water"/>Water</label>
+        <label for="rock">
+        <input name="type" type="checkbox" id="rock" value="rock"/>Rock</label>
+        <label for="fire">
+        <input name="type" type="checkbox" id="fire" value="fire"/>Fire</label>
+        <label for="bug">
+        <input name="type" type="checkbox" id="bug" value="bug"/>Bug</label>
+        <label for="poison">
+        <input name="type" type="checkbox" id="poison" value="poison"/>Poison</label>
+        <label for="fairy">
+        <input name="type" type="checkbox" id="fairy" value="fairy"/>Fairy</label>
+        <label for="grass">
+        <input name="type" type="checkbox" id="grass" value="grass"/>Grass</label>
+        <label for="flying">
+        <input name="type" type="checkbox" id="flying" value="flying"/>Flying</label>
+        <label for="normal">
+        <input name="type" type="checkbox" id="normal" value="normal"/>Normal</label>
+        <label for="ice">
+        <input name="type" type="checkbox" id="ice" value="ice"/>Ice</label>
+    </fieldset>
+    </div>
+    Current Candy <input type="text" name="candy" value="" placeholder="Candy">
+    <fieldset class="attacks">
+        <legend>Attacks</legend>
+        <input type="" name="attacks" value="" placeholder="Attack 1">
+        <input type="" name="attacks" value="" placeholder="Attack 2">
+    </fieldset>
+
+    Current HP: <input type="number" name="hp" value="" placeholder="Health Points">
+    Current CP: <input type="number" name="cp" value="" placeholder="Combat Power">
+    Catch Info:
+    Current Catch City:<input type="text" name="city" value="" placeholder="City">
+    Current Catch State: <input type="text" name="state" value="" placeholder="State">
+    <input type="submit" name="button" placeholder="Create">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{#edits}}
+<form class="" action="/edit" method="post">
+Change stats for {{name}}:
+<ul>
+    <li>Current Name: {{name}}.
+
+            <input type="text" name="name" value="{{name}}">
+
+        <!--the name is how you grab the information the person puts in. I remember that from the to do list -->
+
+    </li>
+
+
+
+    <li>Current Gender: {{gender}}</li>
+    <li>Current Type: {{type}}</li>
+    <li>Current Candy: {{candy}}</li>
+    <li>Current Attacks: {{#attacks}}{{.}}, {{/attacks}}</li>
+    <li>Catch Info</li>
+    <ol>
+        <li>Current City: {{city}}</li>
+        <li>Current State: {{state}}</li>
+    </ol>
+    <li>Current Health Points: {{hp}}</li>
+    <li>Current Combat Power: {{cp}}</li>
+</ul>
+<input type="submit" name="button" value="submit">
+</form>
+
+{{/edits}} -->
